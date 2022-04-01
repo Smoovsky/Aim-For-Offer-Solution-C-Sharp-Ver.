@@ -34,7 +34,7 @@
                 p1Index--;
             }
 
-            Console.WriteLine(string.Join(string.Empty, source));
+            // Console.WriteLine(string.Join(string.Empty, source));
         }
     }
 }
