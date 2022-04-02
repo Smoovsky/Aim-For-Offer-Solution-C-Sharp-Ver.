@@ -2,7 +2,7 @@
 {
     public static partial class Solution
     {
-        public static TreeNode<T> RebuildBinaryTreeP64<T>(
+        public static TreeNode<T> RebuildBinaryTreeP62<T>(
             T[] preOrder,
             T[] inOrder)
         {
@@ -106,7 +106,19 @@
 
         public class TreeNode<T>
         {
+            public TreeNode()
+            {
+                
+            }
+
+            public TreeNode(T value)
+            {
+                Value = value;
+            }
+
             public T Value { get; set; }
+
+            public TreeNode<T> Parent { get; set; }
 
             public TreeNode<T> Left { get; set; }
 

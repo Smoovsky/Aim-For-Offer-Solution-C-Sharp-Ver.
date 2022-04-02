@@ -15,10 +15,14 @@ using static Algorithm.Solution;
 // ReversePrintLinkedListStackP58(linkedListP58);
 // ReversePrintLinkedListRecursiveP58(linkedListP58);
 
-// RebuildBinaryTreeP64
+// RebuildBinaryTreeP62
 // var preOrder = new[] { 1, 2, 4, 7, 3, 5, 6, 8 };
 // var inOrder = new[] { 4, 7, 2, 1, 5, 3, 8, 6 };
-
-// var root = RebuildBinaryTreeP64(preOrder, inOrder);
-
+// var root = RebuildBinaryTreeP62(preOrder, inOrder);
 // Print2D(root);
+
+// NextNodeInOrderP64
+Test1_7();
+Test8_11();
+Test12_15();
+Test16();
