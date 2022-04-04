@@ -22,7 +22,31 @@ using static Algorithm.Solution;
 // Print2D(root);
 
 // NextNodeInOrderP64
-Test1_7();
-Test8_11();
-Test12_15();
-Test16();
+// Test1_7();
+// Test8_11();
+// Test12_15();
+// Test16();
+
+// OneQueueFromTwoStacksP68
+// var queue = new CustomQueue<char>();
+
+// queue.Enqueue('a');
+// queue.Enqueue('b');
+// queue.Enqueue('c');
+
+// char head = queue.Dequeue();
+// Test(head, 'a');
+
+// head = queue.Dequeue();
+// Test(head, 'b');
+
+// queue.Enqueue('d');
+// head = queue.Dequeue();
+// Test(head, 'c');
+
+// queue.Enqueue('e');
+// head = queue.Dequeue();
+// Test(head, 'd');
+
+// head = queue.Dequeue();
+// Test(head, 'e');
