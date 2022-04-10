@@ -50,3 +50,10 @@ using static Algorithm.Solution;
 
 // head = queue.Dequeue();
 // Test(head, 'e');
+
+// FibonacciRecursiceP78
+Console.WriteLine(FibonacciLoopP78(40));
+Console.WriteLine(FibonacciRecursiceP78(40));
+
+Console.WriteLine(FibonacciLoopP78(50));
+// Console.WriteLine(FibonacciRecursiceP78(50)); // don't do it, too slow
