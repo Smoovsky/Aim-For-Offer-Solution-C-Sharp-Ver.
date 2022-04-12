@@ -52,8 +52,17 @@ using static Algorithm.Solution;
 // Test(head, 'e');
 
 // FibonacciRecursiceP78
-Console.WriteLine(FibonacciLoopP78(40));
-Console.WriteLine(FibonacciRecursiceP78(40));
+// Console.WriteLine(FibonacciLoopP78(40));
+// Console.WriteLine(FibonacciRecursiceP78(40));
 
-Console.WriteLine(FibonacciLoopP78(50));
-// Console.WriteLine(FibonacciRecursiceP78(50)); // don't do it, too slow
+// Console.WriteLine(FibonacciLoopP78(50));
+// // Console.WriteLine(FibonacciRecursiceP78(50)); // don't do it, too slow
+
+// QuickSortP80
+// var input1 = new[] { 3, 2 };
+// var input2 = new[] { 12, 22, 88, 44, 23, 865, 45, 231, 578, 45, 84252, 658, 0, 1, 987, 34, 654, 2342, 33 };
+// var input3 = new[] { 3, 2, 5, 3, 6, 8, 1, 0, 4, 5 };
+// QuickSortP80(input1);
+// QuickSortP80(input2);
+// QuickSortP80(input3);
+// Console.Read();
