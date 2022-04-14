@@ -2,6 +2,7 @@
 // Console.WriteLine("Hello, World!");
 
 using static Algorithm.Solution;
+using System.Text.Json;
 
 // ReplaceSpaceP53
 // ReplaceSpaceP53(new List<char> { 'a', ' ', 'b' });
@@ -66,3 +67,7 @@ using static Algorithm.Solution;
 // QuickSortP80(input2);
 // QuickSortP80(input3);
 // Console.Read();
+
+// RotationArrayMinP84
+Console.WriteLine(RotationArrayMinP84(new[] { 3, 4, 5, -2, 1, 2, 2 }));
+Console.WriteLine(RotationArrayMinP84(new[] { 22, 33, 56, 13, 15 }));
