@@ -69,5 +69,31 @@ using System.Text.Json;
 // Console.Read();
 
 // RotationArrayMinP84
-Console.WriteLine(RotationArrayMinP84(new[] { 3, 4, 5, -2, 1, 2, 2 }));
-Console.WriteLine(RotationArrayMinP84(new[] { 22, 33, 56, 13, 15 }));
+// Console.WriteLine(RotationArrayMinP84(new[] { 3, 4, 5, -2, 1, 2, 2 }));
+// Console.WriteLine(RotationArrayMinP84(new[] { 22, 33, 56, 13, 15 }));
+// 典型输入，单调升序的数组的一个旋转
+var array1 = new[] { 3, 4, 5, 1, 2 };
+TestRotatedArrayMinP84(array1, 1);
+
+// 有重复数字，并且重复的数字刚好的最小的数字
+var array2 = new[] { 3, 4, 5, 1, 1, 2 };
+TestRotatedArrayMinP84(array2, 1);
+
+// 有重复数字，但重复的数字不是第一个数字和最后一个数字
+var array3 = new[] { 3, 4, 5, 1, 2, 2 };
+TestRotatedArrayMinP84(array3, 1);
+
+// 有重复的数字，并且重复的数字刚好是第一个数字和最后一个数字
+var array4 = new[] { 1, 0, 1, 1, 1 };
+TestRotatedArrayMinP84(array4, 0);
+
+// 单调升序数组，旋转0个元素，也就是单调升序数组本身
+var array5 = new[] { 1, 2, 3, 4, 5 };
+TestRotatedArrayMinP84(array5, 1);
+
+// 数组中只有一个数字
+var array6 = new[] { 2 };
+TestRotatedArrayMinP84(array6, 2);
+
+// 输入nullptr
+TestRotatedArrayMinP84(null, 0);
