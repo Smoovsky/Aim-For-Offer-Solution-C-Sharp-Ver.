@@ -2,7 +2,7 @@
 {
     public static partial class Solution
     {
-        public static int FibonacciRecursiceP78(int seqNum)
+        public static int FibonacciRecursiveP78(int seqNum)
         {
             var seed = new[] { 1, 1 };
 
@@ -16,7 +16,7 @@
                 return seed[seqNum - 1];
             }
 
-            return FibonacciRecursiceP78(seqNum - 1) + FibonacciRecursiceP78(seqNum - 2);
+            return FibonacciRecursiveP78(seqNum - 1) + FibonacciRecursiveP78(seqNum - 2);
         }
 
         public static int FibonacciLoopP78(int seqNum)
