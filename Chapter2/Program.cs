@@ -111,4 +111,8 @@ using System.Text.Json;
 
 // ====================================================================================
 // MaxProductAfterCutP97
-TestMaxProductAfterCutP97DynPlan();
+// TestMaxProductAfterCutP97DynPlan();
+
+// ====================================================================================
+// P100AlphaDecimal
+P100AlphaDecimalTest();
