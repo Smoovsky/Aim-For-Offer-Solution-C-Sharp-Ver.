@@ -107,4 +107,8 @@ using System.Text.Json;
 
 // ====================================================================================
 // HasPathP90
-TestHasPathP90();
+// TestHasPathP90();
+
+// ====================================================================================
+// MaxProductAfterCutP97
+TestMaxProductAfterCutP97DynPlan();
