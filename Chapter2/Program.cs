@@ -119,4 +119,27 @@ using System.Text.Json;
 
 // ====================================================================================
 // P100CountOneShiftOne
-TestP100CountOne();
+// TestP100CountOne();
+
+// ====================================================================================
+// P110Power
+// 底数、指数都为正数
+// P110PowerTest("P110PowerTest1", 2, 3, 8, false);
+
+// // 底数为负数、指数为正数
+// P110PowerTest("P110PowerTest2", -2, 3, -8, false);
+
+// // 指数为负数
+// P110PowerTest("P110PowerTest3", 2, -3, 0.125m, false);
+
+// // 指数为0
+// P110PowerTest("P110PowerTest4", 2, 0, 1, false);
+
+// // 底数、指数都为0
+// P110PowerTest("P110PowerTest5", 0, 0, 1, false);
+
+// // 底数为0、指数为正数
+// P110PowerTest("P110PowerTest6", 0, 4, 0, false);
+
+// // 底数为0、指数为负数
+// P110PowerTest("P110PowerTest7", 0, -4, 0, true);
