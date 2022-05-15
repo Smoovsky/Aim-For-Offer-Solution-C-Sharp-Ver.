@@ -4,13 +4,13 @@
     {
         public class P120LinkedListNode<T>
         {
-            public T Value { get; set; }
+            public T? Value { get; set; }
 
-            public P120LinkedListNode<T> Next { get; set; }
+            public P120LinkedListNode<T>? Next { get; set; }
         }
 
         public static void P120DelLinkedListNode<T>(
-            ref P120LinkedListNode<T> head,
+            ref P120LinkedListNode<T>? head,
             P120LinkedListNode<T> nodeToDel)
         {
             if (nodeToDel.Next != null)
@@ -25,15 +25,15 @@
             else // del last node
             {
                 var prev = head;
-                var current = head.Next;
+                var current = head!.Next;
 
-                while (current.Next != null)
+                while (current!.Next != null)
                 {
                     prev = current;
                     current = current.Next;
                 }
 
-                prev.Next = null;
+                prev!.Next = null;
             }
         }
     }
