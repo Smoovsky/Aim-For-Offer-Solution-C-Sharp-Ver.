@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Chapter2/bin/Debug/net6.0/Chapter2.dll",
+            "program": "${workspaceFolder}/TestProj/bin/Debug/net6.0/TestProj.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Chapter2",
+            "cwd": "${workspaceFolder}/TestProj",
             "console": "internalConsole",
             "stopAtEntry": false
         },

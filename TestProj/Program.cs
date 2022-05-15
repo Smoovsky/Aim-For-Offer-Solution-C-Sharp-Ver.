@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 
-using static Algorithm.Solution;
-using System.Text.Json;
+using static Algorithm.Chapter2.Solution;
+using static Algorithm.Chapter3.Solution;
 
 // ====================================================================================
 // ReplaceSpaceP53

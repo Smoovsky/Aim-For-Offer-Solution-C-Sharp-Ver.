@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Algorithm
+namespace Algorithm.Chapter3
 {
     public static partial class Solution
     {

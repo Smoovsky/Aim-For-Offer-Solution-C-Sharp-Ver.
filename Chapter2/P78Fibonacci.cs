@@ -1,4 +1,4 @@
-﻿namespace Algorithm
+﻿namespace Algorithm.Chapter2
 {
     public static partial class Solution
     {
