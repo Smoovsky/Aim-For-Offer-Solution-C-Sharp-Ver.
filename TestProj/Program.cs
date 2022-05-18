@@ -145,9 +145,42 @@ using static Algorithm.Chapter3.Solution;
 
 // ====================================================================================
 // P116PrintNumberByDecimalCount
-TestP116PrintNumberByDecimalCount();
+// TestP116PrintNumberByDecimalCount();
 
 // ====================================================================================
 // P120DelLinkedListNode
 // No test
+
+// ====================================================================================
+// P126Regex
+// P126RegexTest("Test01", "", "", true);
+// P126RegexTest("Test02", "", ".*", true);
+// P126RegexTest("Test03", "", ".", false);
+// P126RegexTest("Test04", "", "c*", true);
+// P126RegexTest("Test05", "a", ".*", true);
+// P126RegexTest("Test06", "a", "a.", false);
+// P126RegexTest("Test07", "a", "", false);
+// P126RegexTest("Test08", "a", ".", true);
+// P126RegexTest("Test09", "a", "ab*", true);
+// P126RegexTest("Test10", "a", "ab*a", false);
+// P126RegexTest("Test11", "aa", "aa", true);
+// P126RegexTest("Test12", "aa", "a*", true);
+// P126RegexTest("Test13", "aa", ".*", true);
+// P126RegexTest("Test14", "aa", ".", false);
+// P126RegexTest("Test15", "ab", ".*", true);
+// P126RegexTest("Test16", "ab", ".*", true);
+// P126RegexTest("Test17", "aaa", "aa*", true);
+// P126RegexTest("Test18", "aaa", "aa.a", false);
+// P126RegexTest("Test19", "aaa", "a.a", true);
+// P126RegexTest("Test20", "aaa", ".a", false);
+// P126RegexTest("Test21", "aaa", "a*a", true);
+// P126RegexTest("Test22", "aaa", "ab*a", false);
+// P126RegexTest("Test23", "aaa", "ab*ac*a", true);
+// P126RegexTest("Test24", "aaa", "ab*a*c*a", true);
+// P126RegexTest("Test25", "aaa", ".*", true);
+// P126RegexTest("Test26", "aab", "c*a*b", true);
+// P126RegexTest("Test27", "aaca", "ab*a*c*a", true);
+// P126RegexTest("Test28", "aaba", "ab*a*c*a", false);
+// P126RegexTest("Test29", "bbbba", ".*a*a", true);
+// P126RegexTest("Test30", "bcbbabab", ".*a*a", false);
 

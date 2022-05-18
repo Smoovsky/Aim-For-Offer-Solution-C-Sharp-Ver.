@@ -43,7 +43,7 @@
                 return false;
             }
 
-            if (str[0] == pattern[0])
+            if (str[0] == pattern[0] || pattern[0] == '.')
             {
                 return P126Regex(
                     pattern[1..],
@@ -51,6 +51,17 @@
             }
 
             return false;
+        }
+
+        public static void P126RegexTest(string testName, string str, string pattern, bool expected)
+        {
+            if (testName != null)
+                Console.WriteLine($"{testName} begins: ");
+
+            if (P126Regex(pattern, str) == expected)
+                Console.WriteLine("Passed.\n");
+            else
+                Console.WriteLine("FAILED.\n");
         }
     }
 }
