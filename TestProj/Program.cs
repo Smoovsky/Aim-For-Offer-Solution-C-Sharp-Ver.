@@ -184,3 +184,26 @@ using static Algorithm.Chapter3.Solution;
 // P126RegexTest("Test29", "bbbba", ".*a*a", true);
 // P126RegexTest("Test30", "bcbbabab", ".*a*a", false);
 
+// ====================================================================================
+// P127MatchNumber
+// P127Test("Test1", "100", true);
+// P127Test("Test2", "123.45e+6", true);
+// P127Test("Test3", "+500", true);
+// P127Test("Test4", "5e2", true);
+// P127Test("Test5", "3.1416", true);
+// P127Test("Test6", "600.", true);
+// P127Test("Test7", "-.123", true);
+// P127Test("Test8", "-1E-16", true);
+// P127Test("Test9", "1.79769313486232E+308", true);
+// P127Test("Test10", "12e", false);
+// P127Test("Test11", "1a3.14", false);
+// P127Test("Test12", "1+23", false);
+// P127Test("Test13", "1.2.3", false);
+// P127Test("Test14", "+-5", false);
+// P127Test("Test15", "12e+5.4", false);
+// P127Test("Test16", ".", false);
+// P127Test("Test17", ".e1", false);
+// P127Test("Test18", "e1", false);
+// P127Test("Test19", "+.", false);
+// P127Test("Test20", "", false);
+// P127Test("Test21", null, false);
