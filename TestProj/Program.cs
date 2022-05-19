@@ -207,3 +207,9 @@ using static Algorithm.Chapter3.Solution;
 // P127Test("Test19", "+.", false);
 // P127Test("Test20", "", false);
 // P127Test("Test21", null, false);
+
+// ====================================================================================
+// P130MoveArrayOddEven
+// var p130TstArry = new[] { 1, 7, 3, 8, 2, 8, 0, 3, 2, 5, 7, 9, 3, 1, 6, 8, 0, 3, 1, 6, 7, 2 };
+// P130MoveArrayOddEvenTwoPointers(p130TstArry);
+// Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(p130TstArry));
