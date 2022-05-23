@@ -2,16 +2,16 @@
 {
     public static partial class Solution
     {
-        public class P120LinkedListNode<T>
+        public class LinkedListNode<T>
         {
             public T? Value { get; set; }
 
-            public P120LinkedListNode<T>? Next { get; set; }
+            public LinkedListNode<T>? Next { get; set; }
         }
 
         public static void P120DelLinkedListNode<T>(
-            ref P120LinkedListNode<T>? head,
-            P120LinkedListNode<T> nodeToDel)
+            ref LinkedListNode<T>? head,
+            LinkedListNode<T> nodeToDel)
         {
             if (nodeToDel.Next != null)
             {
