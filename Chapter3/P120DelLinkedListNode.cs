@@ -7,6 +7,21 @@
             public T? Value { get; set; }
 
             public LinkedListNode<T>? Next { get; set; }
+
+            public static LinkedListNode<TV> Create<TV>(TV val) => new()
+            {
+                Value = val
+            };
+
+            public static void Connect<TV>(LinkedListNode<TV> p,  LinkedListNode<TV> c)
+            {
+                if (p == null)
+                {
+                    return;
+                }
+
+                p.Next = c;
+            }
         }
 
         public static void P120DelLinkedListNode<T>(

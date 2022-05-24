@@ -213,3 +213,13 @@ using static Algorithm.Chapter3.Solution;
 // var p130TstArry = new[] { 1, 7, 3, 8, 2, 8, 0, 3, 2, 5, 7, 9, 3, 1, 6, 8, 0, 3, 1, 6, 7, 2 };
 // P130MoveArrayOddEvenTwoPointers(p130TstArry);
 // Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(p130TstArry));
+
+// ====================================================================================
+// P140EntryOfLoopNodes
+P140Test1();
+P140Test2();
+P140Test3();
+P140Test4();
+P140Test5();
+P140Test6();
+P140Test7();
