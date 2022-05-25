@@ -216,10 +216,16 @@ using static Algorithm.Chapter3.Solution;
 
 // ====================================================================================
 // P140EntryOfLoopNodes
-P140Test1();
-P140Test2();
-P140Test3();
-P140Test4();
-P140Test5();
-P140Test6();
-P140Test7();
+// P140Test1();
+// P140Test2();
+// P140Test3();
+// P140Test4();
+// P140Test5();
+// P140Test6();
+// P140Test7();
+
+// ====================================================================================
+// P145ReverseLinkedList
+P145Test1();
+P145Test2();
+P145Test3();

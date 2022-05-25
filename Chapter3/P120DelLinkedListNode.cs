@@ -13,7 +13,7 @@
                 Value = val
             };
 
-            public static void Connect<TV>(LinkedListNode<TV> p,  LinkedListNode<TV> c)
+            public static void Connect<TV>(LinkedListNode<TV> p, LinkedListNode<TV> c)
             {
                 if (p == null)
                 {
@@ -21,6 +21,17 @@
                 }
 
                 p.Next = c;
+            }
+
+            public static void Print<TV>(LinkedListNode<TV> node)
+            {
+                while (node != null)
+                {
+                    Console.Write($"{node.Value}\t");
+                    node = node.Next;
+                }
+
+                Console.Write("\n");
             }
         }
 
