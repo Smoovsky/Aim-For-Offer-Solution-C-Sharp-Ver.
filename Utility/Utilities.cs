@@ -85,5 +85,25 @@ public static class Utilities
             // Pass initial space count as 0
             Print2DUtil(root, 0);
         }
+
+        public static void ConnectTreeNodes<K>(
+            TreeNode<K> pParent,
+            TreeNode<K> pLeft,
+            TreeNode<K> pRight)
+        {
+            if (pParent == null)
+            {
+                return;
+            }
+
+            pParent.Left = pLeft;
+            pParent.Right = pRight;
+
+            if (pLeft != null)
+                pLeft.Parent = pParent;
+
+            if (pRight != null)
+                pRight.Parent = pParent;
+        }
     }
 }

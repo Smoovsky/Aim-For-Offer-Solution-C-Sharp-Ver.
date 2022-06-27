@@ -33,23 +33,6 @@
             return pNext?.Parent;
         }
 
-        public static void ConnectTreeNodes<T>(TreeNode<T> pParent, TreeNode<T> pLeft, TreeNode<T> pRight)
-        {
-            if (pParent == null)
-            {
-                return;
-            }
-
-            pParent.Left = pLeft;
-            pParent.Right = pRight;
-
-            if (pLeft != null)
-                pLeft.Parent = pParent;
-
-            if (pRight != null)
-                pRight.Parent = pParent;
-        }
-
         public static void Test(string testName, TreeNode<int> pNode, TreeNode<int> expected)
         {
             if (testName != null)
@@ -75,9 +58,9 @@
             TreeNode<int> pNode9 = new(9);
             TreeNode<int> pNode11 = new(11);
 
-            ConnectTreeNodes(pNode8, pNode6, pNode10);
-            ConnectTreeNodes(pNode6, pNode5, pNode7);
-            ConnectTreeNodes(pNode10, pNode9, pNode11);
+            TreeNode<int>.ConnectTreeNodes(pNode8, pNode6, pNode10);
+            TreeNode<int>.ConnectTreeNodes(pNode6, pNode5, pNode7);
+            TreeNode<int>.ConnectTreeNodes(pNode10, pNode9, pNode11);
 
             Test("Test1", pNode8, pNode9);
             Test("Test2", pNode6, pNode7);
@@ -99,9 +82,9 @@
             TreeNode<int> pNode3 = new(3);
             TreeNode<int> pNode2 = new(2);
 
-            ConnectTreeNodes(pNode5, pNode4, null);
-            ConnectTreeNodes(pNode4, pNode3, null);
-            ConnectTreeNodes(pNode3, pNode2, null);
+            TreeNode<int>.ConnectTreeNodes(pNode5, pNode4, null);
+            TreeNode<int>.ConnectTreeNodes(pNode4, pNode3, null);
+            TreeNode<int>.ConnectTreeNodes(pNode3, pNode2, null);
 
             Test("Test8", pNode5, null);
             Test("Test9", pNode4, pNode5);
@@ -120,9 +103,9 @@
             TreeNode<int> pNode4 = new(4);
             TreeNode<int> pNode5 = new(5);
 
-            ConnectTreeNodes(pNode2, null, pNode3);
-            ConnectTreeNodes(pNode3, null, pNode4);
-            ConnectTreeNodes(pNode4, null, pNode5);
+            TreeNode<int>.ConnectTreeNodes(pNode2, null, pNode3);
+            TreeNode<int>.ConnectTreeNodes(pNode3, null, pNode4);
+            TreeNode<int>.ConnectTreeNodes(pNode4, null, pNode5);
 
             Test("Test12", pNode5, null);
             Test("Test13", pNode4, pNode5);

@@ -237,3 +237,15 @@ using static Algorithm.Chapter3.Solution;
 // P147Test3();
 // P147Test4();
 // P147Test5();
+
+
+// P151HasSubTree
+P151Test1();
+P151Test2();
+P151Test3();
+P151Test4();
+P151Test5();
+P151Test6();
+P151Test7();
+P151Test8();
+P151Test9();
