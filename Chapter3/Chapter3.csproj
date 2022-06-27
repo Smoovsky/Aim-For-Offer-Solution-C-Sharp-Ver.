@@ -1,10 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <NoWarn>CS8618;CS8603;CS8600;CS8625</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Using Remove="System.Collections.Generic" />
+  </ItemGroup>
 
 </Project>
