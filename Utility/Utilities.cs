@@ -48,11 +48,11 @@ public static class Utilities
 
         public T? Value { get; set; }
 
-        public TreeNode<T>? Parent { get; set; }
+        public TreeNode<T?>? Parent { get; set; }
 
-        public TreeNode<T>? Left { get; set; }
+        public TreeNode<T?>? Left { get; set; }
 
-        public TreeNode<T>? Right { get; set; }
+        public TreeNode<T?>? Right { get; set; }
 
         public static readonly int COUNT = 10;
 

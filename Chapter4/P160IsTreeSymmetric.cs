@@ -2,10 +2,7 @@
 
 public static partial class Solution
 {
-    public static bool P160IsTreeSymmetric<T>(TreeNode<T>? root)
-    {
-
-    }
+    public static bool P160IsTreeSymmetric<T>(TreeNode<T>? root) => P160IsTreeSymmetricCore(root, root);
 
     public static bool P160IsTreeSymmetricCore<T>(
         TreeNode<T>? tree1,

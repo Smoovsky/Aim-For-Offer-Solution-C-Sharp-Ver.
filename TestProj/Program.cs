@@ -3,6 +3,7 @@
 
 using static Algorithm.Chapter2.Solution;
 using static Algorithm.Chapter3.Solution;
+using static Algorithm.Chapter4.Solution;
 
 // ====================================================================================
 // ReplaceSpaceP53
@@ -238,7 +239,7 @@ using static Algorithm.Chapter3.Solution;
 // P147Test4();
 // P147Test5();
 
-
+// ====================================================================================
 // P151HasSubTree
 // P151Test1();
 // P151Test2();
@@ -249,3 +250,11 @@ using static Algorithm.Chapter3.Solution;
 // P151Test7();
 // P151Test8();
 // P151Test9();
+
+// ====================================================================================
+// P156GetMirrorTree
+// P156Test1();
+// P156Test2();
+// P156Test3();
+// P156Test4();
+// P156Test5();
