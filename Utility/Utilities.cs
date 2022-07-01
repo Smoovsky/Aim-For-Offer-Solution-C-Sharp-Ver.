@@ -87,9 +87,9 @@ public static class Utilities
         }
 
         public static void ConnectTreeNodes<K>(
-            TreeNode<K> pParent,
-            TreeNode<K> pLeft,
-            TreeNode<K> pRight)
+            TreeNode<K?> pParent,
+            TreeNode<K?> pLeft,
+            TreeNode<K?> pRight)
         {
             if (pParent == null)
             {

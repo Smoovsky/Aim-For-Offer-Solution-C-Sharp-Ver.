@@ -3,8 +3,8 @@
 public static partial class Solution
 {
     public static bool P151HasSubTree<T>(
-        TreeNode<T>? tree1,
-        TreeNode<T>? tree2)
+        TreeNode<T?>? tree1,
+        TreeNode<T?>? tree2)
     where T : IComparable
     {
         if (tree1 == null || tree2 == null)
@@ -24,8 +24,8 @@ public static partial class Solution
     }
 
     public static bool P151IsSubTree<T>(
-        TreeNode<T>? tree1,
-        TreeNode<T>? tree2)
+        TreeNode<T?>? tree1,
+        TreeNode<T?>? tree2)
     {
         if (tree2 == null)
         {
