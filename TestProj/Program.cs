@@ -258,3 +258,16 @@ using static Algorithm.Chapter4.Solution;
 // P156Test3();
 // P156Test4();
 // P156Test5();
+
+// ====================================================================================
+// P160IsTreeSymmetric
+// P160Test1();
+// P160Test2();
+// P160Test3();
+// P160Test4();
+// P160Test5();
+// P160Test6();
+// P160Test7();
+// P160Test8();
+// P160Test9();
+// P160Test10(); 
