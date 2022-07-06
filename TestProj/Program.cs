@@ -392,3 +392,24 @@ using static Algorithm.Chapter4.Solution;
 
 // stack.Push(0);
 // P166Test("Test8", stack, 0);
+
+// ====================================================================================
+// P176BreadthFirstPrintTree
+P176BreadthFirstTest1();
+P176BreadthFirstTest2();
+P176BreadthFirstTest3();
+P176BreadthFirstTest4();
+P176BreadthFirstTest5();
+P176LayeredBreadthFirstPrintTreeTest1();
+P176LayeredBreadthFirstPrintTreeTest2();
+P176LayeredBreadthFirstPrintTreeTest3();
+P176LayeredBreadthFirstPrintTreeTest4();
+P176LayeredBreadthFirstPrintTreeTest5();
+P176LayeredBreadthFirstPrintTreeTest6();
+P176ZigZagBreadthFirstPrintTreeTest1();
+P176ZigZagBreadthFirstPrintTreeTest2();
+P176ZigZagBreadthFirstPrintTreeTest3();
+P176ZigZagBreadthFirstPrintTreeTest4();
+P176ZigZagBreadthFirstPrintTreeTest5();
+P176ZigZagBreadthFirstPrintTreeTest6();
+P176ZigZagBreadthFirstPrintTreeTest7();
