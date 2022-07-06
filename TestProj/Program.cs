@@ -395,21 +395,32 @@ using static Algorithm.Chapter4.Solution;
 
 // ====================================================================================
 // P176BreadthFirstPrintTree
-P176BreadthFirstTest1();
-P176BreadthFirstTest2();
-P176BreadthFirstTest3();
-P176BreadthFirstTest4();
-P176BreadthFirstTest5();
-P176LayeredBreadthFirstPrintTreeTest1();
-P176LayeredBreadthFirstPrintTreeTest2();
-P176LayeredBreadthFirstPrintTreeTest3();
-P176LayeredBreadthFirstPrintTreeTest4();
-P176LayeredBreadthFirstPrintTreeTest5();
-P176LayeredBreadthFirstPrintTreeTest6();
-P176ZigZagBreadthFirstPrintTreeTest1();
-P176ZigZagBreadthFirstPrintTreeTest2();
-P176ZigZagBreadthFirstPrintTreeTest3();
-P176ZigZagBreadthFirstPrintTreeTest4();
-P176ZigZagBreadthFirstPrintTreeTest5();
-P176ZigZagBreadthFirstPrintTreeTest6();
-P176ZigZagBreadthFirstPrintTreeTest7();
+// P176BreadthFirstTest1();
+// P176BreadthFirstTest2();
+// P176BreadthFirstTest3();
+// P176BreadthFirstTest4();
+// P176BreadthFirstTest5();
+// P176LayeredBreadthFirstPrintTreeTest1();
+// P176LayeredBreadthFirstPrintTreeTest2();
+// P176LayeredBreadthFirstPrintTreeTest3();
+// P176LayeredBreadthFirstPrintTreeTest4();
+// P176LayeredBreadthFirstPrintTreeTest5();
+// P176LayeredBreadthFirstPrintTreeTest6();
+// P176ZigZagBreadthFirstPrintTreeTest1();
+// P176ZigZagBreadthFirstPrintTreeTest2();
+// P176ZigZagBreadthFirstPrintTreeTest3();
+// P176ZigZagBreadthFirstPrintTreeTest4();
+// P176ZigZagBreadthFirstPrintTreeTest5();
+// P176ZigZagBreadthFirstPrintTreeTest6();
+// P176ZigZagBreadthFirstPrintTreeTest7();
+
+// ====================================================================================
+// P180IsArrayBST
+P180Test1();
+P180Test2();
+P180Test3();
+P180Test4();
+P180Test5();
+P180Test6();
+P180Test7();
+P180Test8();
