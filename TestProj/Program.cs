@@ -458,3 +458,6 @@ using static Algorithm.Chapter4.Solution;
 // P191Test4();
 // P191Test5();
 // P191Test6();
+
+// P198LengthNCombination("abcd".ToArray(), 3);
+// P198Combination("abcd".ToArray());
