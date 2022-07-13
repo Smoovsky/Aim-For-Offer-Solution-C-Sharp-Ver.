@@ -4,6 +4,7 @@
 using static Algorithm.Chapter2.Solution;
 using static Algorithm.Chapter3.Solution;
 using static Algorithm.Chapter4.Solution;
+using static Algorithm.Chapter5.Solution;
 
 // ====================================================================================
 // ReplaceSpaceP53
@@ -461,3 +462,11 @@ using static Algorithm.Chapter4.Solution;
 
 // P198LengthNCombination("abcd".ToArray(), 3);
 // P198Combination("abcd".ToArray());
+
+// P205NumberOverHalf("abcd".ToArray(), 3);
+P205Test1();
+P205Test2();
+P205Test3();
+P205Test4();
+P205Test5();
+P205Test6();

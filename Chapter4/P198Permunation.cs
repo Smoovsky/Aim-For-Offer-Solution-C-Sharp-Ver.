@@ -73,8 +73,4 @@ public static partial class Solution
             P198LengthNCombination(source, i);
         }
     }
-
-    public static void Swap(
-        ref char char1,
-        ref char char2) => (char1, char2) = (char2, char1);
 }

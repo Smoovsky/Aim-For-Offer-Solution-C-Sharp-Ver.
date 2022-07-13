@@ -106,4 +106,40 @@ public static class Utilities
                 pRight.Parent = pParent;
         }
     }
+
+    public static void Swap<T>(
+        ref T char1,
+        ref T char2) => (char1, char2) = (char2, char1);
+
+    public static int Partition(
+        int[] source,
+        int? start = null,
+        int? end = null)
+    {
+        start ??= 0;
+        end ??= source.Length - 1;
+
+        var index = new Random().Next(start.Value, end.Value);
+
+        Swap(ref source[index], ref source[end.Value]);
+
+        var small = start.Value - 1;
+
+        for (index = start.Value; index < end; index++)
+        {
+            if (source[index] < source[end.Value])
+            {
+                small++;
+
+                if (small != index)
+                {
+                    Swap(ref source[small], ref source[index]);
+                }
+            }
+        }
+
+        Swap(ref source[++small], ref source[end.Value]);
+
+        return small;
+    }
 }
