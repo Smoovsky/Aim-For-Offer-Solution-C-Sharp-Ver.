@@ -5,6 +5,7 @@ using static Algorithm.Chapter2.Solution;
 using static Algorithm.Chapter3.Solution;
 using static Algorithm.Chapter4.Solution;
 using static Algorithm.Chapter5.Solution;
+using static Algorithm.Utility.Utilities;
 
 // ====================================================================================
 // ReplaceSpaceP53
@@ -460,13 +461,36 @@ using static Algorithm.Chapter5.Solution;
 // P191Test5();
 // P191Test6();
 
+// ====================================================================================
 // P198LengthNCombination("abcd".ToArray(), 3);
 // P198Combination("abcd".ToArray());
 
+// ====================================================================================
 // P205NumberOverHalf("abcd".ToArray(), 3);
-P205Test1();
-P205Test2();
-P205Test3();
-P205Test4();
-P205Test5();
-P205Test6();
+// P205Test1();
+// P205Test2();
+// P205Test3();
+// P205Test4();
+// P205Test5();
+// P205Test6();
+
+// ====================================================================================
+// Test Red-Black Tree
+RBTreeNode<int>? root = null;
+RBTreeNode<int>.Insert(ref root, 1);
+RBTreeNode<int>.Insert(ref root, 6);
+RBTreeNode<int>.Insert(ref root, 3);
+RBTreeNode<int>.Insert(ref root, 9);
+RBTreeNode<int>.Insert(ref root, 3);
+RBTreeNode<int>.Insert(ref root, 10);
+RBTreeNode<int>.Insert(ref root, 3);
+RBTreeNode<int>.Insert(ref root, 5);
+RBTreeNode<int>.Insert(ref root, 6);
+RBTreeNode<int>.Insert(ref root, 7);
+RBTreeNode<int>.Insert(ref root, 2);
+RBTreeNode<int>.Insert(ref root, 14);
+RBTreeNode<int>.Insert(ref root, 15);
+RBTreeNode<int>.Insert(ref root, 11);
+RBTreeNode<int>.Insert(ref root, 12);
+
+TreeNode<int>.Print2D(root);

@@ -105,6 +105,217 @@ public static class Utilities
             if (pRight != null)
                 pRight.Parent = pParent;
         }
+
+        public static void LeftRotate<K>(TreeNode<K?>? pNode)
+        {
+            var c = pNode?.Right;
+
+            if (c == null)
+            {
+                throw new ArgumentException("Invalid Node.");
+            }
+
+            var cl = c?.Left;
+
+            if (cl != null)
+            {
+                cl.Parent = pNode;
+                pNode!.Right = cl;
+            }
+
+            var pP = pNode!.Parent;
+
+            if (pP != null)
+            {
+                if (pP.Left == pNode)
+                {
+                    pP.Left = c;
+                }
+                else
+                {
+                    pP.Right = c;
+                }
+
+                c!.Parent = pP;
+            }
+
+            c!.Left = pNode;
+            pNode.Parent = c;
+        }
+
+        public static void RightRotate<K>(TreeNode<K?>? pNode)
+        {
+            var c = pNode?.Left;
+
+            if (c == null)
+            {
+                throw new ArgumentException("Invalid Node.");
+            }
+
+            var cr = c?.Right;
+
+            if (cr != null)
+            {
+                cr.Parent = pNode;
+                pNode!.Left = cr;
+            }
+
+            var pP = pNode!.Parent;
+
+            if (pP != null)
+            {
+                if (pP.Left == pNode)
+                {
+                    pP.Left = c;
+                }
+                else
+                {
+                    pP.Right = c;
+                }
+
+                c!.Parent = pP;
+            }
+
+            c!.Right = pNode;
+            pNode.Parent = c;
+        }
+
+        public static void LeftRightRotate<K>(TreeNode<K?>? pNode)
+        {
+            LeftRotate(pNode?.Left);
+            RightRotate(pNode);
+        }
+
+        public static void RightLeftRotate<K>(TreeNode<K?>? pNode)
+        {
+            RightRotate(pNode?.Right);
+            LeftRotate(pNode);
+        }
+    }
+
+    public class RBTreeNode<T> : TreeNode<T>
+        where T : IComparable
+    {
+        public enum RBTreeNodeColor
+        {
+            Red = 1,
+            Black = 2
+        }
+
+        public RBTreeNodeColor Color { get; set; }
+
+        public static void Insert(ref RBTreeNode<T>? root, T valueToInsert)
+        {
+            var nodeToInsert = new RBTreeNode<T>
+            {
+                Value = valueToInsert,
+                Color = RBTreeNodeColor.Red
+            };
+
+            if (root == null)
+            {
+                root = nodeToInsert;
+                root.Color = RBTreeNodeColor.Black;
+
+                return;
+            }
+
+            var current = root as TreeNode<T?>;
+            var next = current.Value!.CompareTo(valueToInsert) > 0
+                ? root.Left
+                : root.Right;
+
+            while (next != null)
+            {
+                current = next;
+                next = current.Value!.CompareTo(valueToInsert) > 0
+                    ? current.Left
+                    : current.Right;
+            }
+
+            _ = current.Value!.CompareTo(valueToInsert) > 0
+                ? current.Left = nodeToInsert!
+                : current.Right = nodeToInsert!;
+            nodeToInsert.Parent = current;
+
+            FixInsertion(nodeToInsert);
+        }
+
+        public static void FixInsertion(RBTreeNode<T> insertedNode)
+        {
+            if (insertedNode?.Parent?.Parent == null)
+            {
+                return;
+            }
+
+            var p = insertedNode.Parent! as RBTreeNode<T>;
+            var g = p!.Parent as RBTreeNode<T>;
+
+            var u = (g!.Left == p
+                ? g.Right
+                : g.Left) as RBTreeNode<T>;
+
+            var uC = u?.Color ?? RBTreeNodeColor.Black;
+
+            if (p.Color == RBTreeNodeColor.Black)
+            {
+                return;
+            }
+            else
+            {
+                if (uC == RBTreeNodeColor.Red)
+                {
+                    while (g != null)
+                    {
+                        u!.Color = RBTreeNodeColor.Black;
+                        p!.Color = RBTreeNodeColor.Black;
+                        g.Color = RBTreeNodeColor.Red;
+
+                        p = g.Parent as RBTreeNode<T>;
+                        g = p?.Parent as RBTreeNode<T>;
+
+                        if (g != null)
+                        {
+                            u = (g!.Left == p
+                                ? g.Right
+                                : g.Left) as RBTreeNode<T>;
+                        }
+                    }
+                }
+                else
+                {
+                    if (g.Left == p && p.Left == insertedNode)
+                    {
+                        RightRotate(g!);
+
+                        (p.Color, g.Color) = (g.Color, p.Color);
+                    }
+
+                    if (g.Left == p && p.Right == insertedNode)
+                    {
+                        LeftRotate(p!);
+                        RightRotate(insertedNode!);
+
+                        (insertedNode.Color, g.Color) = (g.Color, insertedNode.Color);
+                    }
+
+                    if (g.Right == p && p.Right == insertedNode)
+                    {
+                        RightRotate(g!);
+
+                        (p.Color, g.Color) = (g.Color, p.Color);
+                    }
+
+                    if (g.Right == p && p.Left == insertedNode)
+                    {
+                        RightRotate(p!);
+                        LeftRotate(insertedNode!);
+
+                        (insertedNode.Color, g.Color) = (g.Color, insertedNode.Color);
+                    }
+                }
+            }
+        }
     }
 
     public static void Swap<T>(
