@@ -37,26 +37,26 @@ public static class Utilities
         }
     }
 
-    public class TreeNode<T>
+    public class TreeNode<T> where T : struct
     {
         public TreeNode()
         {
 
         }
 
-        public TreeNode(T? value) => Value = value;
+        public TreeNode(T value) => Value = value;
 
-        public T? Value { get; set; }
+        public T Value { get; set; }
 
-        public TreeNode<T?>? Parent { get; set; }
+        public TreeNode<T>? Parent { get; set; }
 
-        public TreeNode<T?>? Left { get; set; }
+        public TreeNode<T>? Left { get; set; }
 
-        public TreeNode<T?>? Right { get; set; }
+        public TreeNode<T>? Right { get; set; }
 
         public static readonly int COUNT = 10;
 
-        public static void Print2DUtil<K>(TreeNode<K>? root, int space)
+        public static void Print2DUtil(TreeNode<T>? root, int space)
         {
             // Base case
             if (root == null)
@@ -80,16 +80,16 @@ public static class Utilities
         }
 
         // Wrapper over print2DUtil()
-        public static void Print2D<K>(TreeNode<K>? root)
+        public static void Print2D(TreeNode<T>? root)
         {
             // Pass initial space count as 0
             Print2DUtil(root, 0);
         }
 
-        public static void ConnectTreeNodes<K>(
-            TreeNode<K?> pParent,
-            TreeNode<K?> pLeft,
-            TreeNode<K?> pRight)
+        public static void ConnectTreeNodes(
+            TreeNode<T> pParent,
+            TreeNode<T> pLeft,
+            TreeNode<T> pRight)
         {
             if (pParent == null)
             {
@@ -106,7 +106,7 @@ public static class Utilities
                 pRight.Parent = pParent;
         }
 
-        public static void LeftRotate<K>(TreeNode<K?>? pNode)
+        public static void LeftRotate(TreeNode<T>? pNode)
         {
             var c = pNode?.Right;
 
@@ -144,7 +144,7 @@ public static class Utilities
             pNode.Parent = c;
         }
 
-        public static void RightRotate<K>(TreeNode<K?>? pNode)
+        public static void RightRotate(TreeNode<T>? pNode)
         {
             var c = pNode?.Left;
 
@@ -182,21 +182,31 @@ public static class Utilities
             pNode.Parent = c;
         }
 
-        public static void LeftRightRotate<K>(TreeNode<K?>? pNode)
+        public static void LeftRightRotate(TreeNode<T>? pNode)
         {
             LeftRotate(pNode?.Left);
             RightRotate(pNode);
         }
 
-        public static void RightLeftRotate<K>(TreeNode<K?>? pNode)
+        public static void RightLeftRotate(TreeNode<T>? pNode)
         {
             RightRotate(pNode?.Right);
             LeftRotate(pNode);
         }
+
+        public static TreeNode<T> FindMinimum(TreeNode<T> node)
+        {
+            while (node.Left != null)
+            {
+                node = node.Left;
+            }
+
+            return node;
+        }
     }
 
     public class RBTreeNode<T> : TreeNode<T>
-        where T : IComparable
+        where T : struct, IComparable
     {
         public enum RBTreeNodeColor
         {
@@ -204,7 +214,7 @@ public static class Utilities
             Black = 2
         }
 
-        public RBTreeNodeColor Color { get; set; }
+        public virtual RBTreeNodeColor Color { get; set; }
 
         public static void Insert(ref RBTreeNode<T>? root, T valueToInsert)
         {
@@ -222,7 +232,7 @@ public static class Utilities
                 return;
             }
 
-            var current = root as TreeNode<T?>;
+            var current = root as TreeNode<T>;
             var next = current.Value!.CompareTo(valueToInsert) > 0
                 ? root.Left
                 : root.Right;
@@ -250,30 +260,6 @@ public static class Utilities
             if (root.Color == RBTreeNodeColor.Red)
             {
                 root.Color = RBTreeNodeColor.Black;
-            }
-        }
-
-        public static void Delete(RBTreeNode<T?> p)
-        {
-            if (p.Left == null && p.Right == null
-                || p.Left == null && p.Right != null
-                || p.Left != null && p.Right == null)
-            {
-                var promoted = (p.Left ?? p.Right) as RBTreeNode<T>;
-
-                if (promoted != null)
-                {
-                    promoted.Parent = p.Parent;
-
-                    if (p.Color == RBTreeNodeColor.Black)
-                    {
-                        promoted.Color = RBTreeNodeColor.Black;
-                    }
-                }
-
-                _ = p.Parent!.Left == p
-                    ? p.Parent.Left = promoted
-                    : p.Parent.Right = promoted;
             }
         }
 
@@ -339,6 +325,143 @@ public static class Utilities
                         (insertedNode.Color, g.Color) = (g.Color, insertedNode.Color);
                     }
                 }
+            }
+        }
+
+        public static void Delete(ref RBTreeNode<T>? root, T val)
+        {
+            var node = root;
+
+            while (node != null && node.Value.CompareTo(val) != 0)
+            {
+                if (node.Value.CompareTo(val) < 0)
+                {
+                    node = node.Right as RBTreeNode<T>;
+                }
+                else
+                {
+                    node = node.Left as RBTreeNode<T>;
+                }
+            }
+
+            if (node == null)
+            {
+                return;
+            }
+
+            RBTreeNode<T> movedUpNode;
+            RBTreeNodeColor deletedNodeColor;
+
+            // Node has zero or one child
+            if (node.Left == null || node.Right == null)
+            {
+                movedUpNode = DeleteNodeWith0or1Child(ref root, node);
+                deletedNodeColor = movedUpNode.Color;
+            }
+            // Node has two children
+            else
+            {
+                // Find minimum node of right subtree ("inorder successor" of current node)
+                var inOrderSuccessor = FindMinimum(node.Right);
+
+                // Copy inorder successor's data to current node (keep its color!)
+                node.Value = inOrderSuccessor.Value;
+
+                // Delete inorder successor just as we would delete a node with 0 or 1 child
+                movedUpNode = DeleteNodeWith0or1Child(ref root, (inOrderSuccessor as RBTreeNode<T>)!);
+                deletedNodeColor = (inOrderSuccessor as RBTreeNode<T>)!.Color;
+            }
+
+            if (deletedNodeColor == RBTreeNodeColor.Black)
+            {
+                FixRedBlackPropertiesAfterDelete(movedUpNode);
+
+                // Remove the temporary NIL node
+                if (movedUpNode is NilNode<T>)
+                {
+                    ReplaceParentsChild(ref root, movedUpNode.Parent as RBTreeNode<T>, movedUpNode, null);
+                }
+            }
+
+            while (root?.Parent != null)
+            {
+                root = root.Parent as RBTreeNode<T>;
+            }
+        }
+
+        private static void FixRedBlackPropertiesAfterDelete(RBTreeNode<T> node)
+        {
+            var parent = node.Parent;
+
+            // Case 1: Parent is null, we've reached the root, the end of the recursion
+            if (parent == null)
+            {
+                // Uncomment the following line if you want to enforce black roots (rule 2):
+                node.Color = RBTreeNodeColor.Black;
+                return;
+            }
+
+            
+        }
+
+        private class NilNode<K> : RBTreeNode<K>
+            where K : struct, IComparable
+        {
+            public override RBTreeNodeColor Color { get { return RBTreeNodeColor.Black; } set { } }
+        }
+
+
+        private static RBTreeNode<T> DeleteNodeWith0or1Child(ref RBTreeNode<T>? root, RBTreeNode<T> node)
+        {
+            // Node has ONLY a left child --> replace by its left child
+            if (node.Left != null)
+            {
+                ReplaceParentsChild(ref root, node.Parent as RBTreeNode<T>, node, node.Left as RBTreeNode<T>);
+                return (node.Left as RBTreeNode<T>)!; // moved-up node
+            }
+
+            // Node has ONLY a right child --> replace by its right child
+            else if (node.Right != null)
+            {
+                ReplaceParentsChild(ref root, node.Parent as RBTreeNode<T>, node, node.Right as RBTreeNode<T>);
+                return (node.Right as RBTreeNode<T>)!; // moved-up node
+            }
+
+            // Node has no children -->
+            // * node is red --> just remove it
+            // * node is black --> replace it by a temporary NIL node (needed to fix the R-B rules)
+            else
+            {
+                var newChild = node.Color == RBTreeNodeColor.Black ? new NilNode<T>() : null;
+
+                ReplaceParentsChild(ref root, node.Parent as RBTreeNode<T>, node, newChild);
+
+                return newChild!;
+            }
+        }
+
+        private static void ReplaceParentsChild(ref RBTreeNode<T>? root, RBTreeNode<T>? parent, RBTreeNode<T>? oldChild, RBTreeNode<T>? newChild)
+        {
+            if (parent == null)
+            {
+                root = newChild;
+            }
+            else if (parent.Left == oldChild)
+            {
+                parent.Left = newChild;
+            }
+            else if (parent.Right == oldChild)
+            {
+                parent.Right = newChild;
+            }
+            else
+            {
+                throw new ArgumentException("Node is not a child of its parent");
+            }
+
+            if (newChild != null)
+            {
+                newChild.Parent = parent;
             }
         }
     }
