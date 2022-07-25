@@ -120,8 +120,9 @@ public static class Utilities
             if (cl != null)
             {
                 cl.Parent = pNode;
-                pNode!.Right = cl;
             }
+
+            pNode!.Right = cl;
 
             var pP = pNode!.Parent;
 
@@ -135,9 +136,9 @@ public static class Utilities
                 {
                     pP.Right = c;
                 }
-
-                c!.Parent = pP;
             }
+
+            c!.Parent = pP;
 
             c!.Left = pNode;
             pNode.Parent = c;
@@ -157,8 +158,9 @@ public static class Utilities
             if (cr != null)
             {
                 cr.Parent = pNode;
-                pNode!.Left = cr;
             }
+
+            pNode!.Left = cr;
 
             var pP = pNode!.Parent;
 
@@ -172,9 +174,9 @@ public static class Utilities
                 {
                     pP.Right = c;
                 }
-
-                c!.Parent = pP;
             }
+
+            c!.Parent = pP;
 
             c!.Right = pNode;
             pNode.Parent = c;
@@ -239,6 +241,40 @@ public static class Utilities
             nodeToInsert.Parent = current;
 
             FixInsertion(nodeToInsert);
+
+            while (root!.Parent != null)
+            {
+                root = root.Parent as RBTreeNode<T>;
+            }
+
+            if (root.Color == RBTreeNodeColor.Red)
+            {
+                root.Color = RBTreeNodeColor.Black;
+            }
+        }
+
+        public static void Delete(RBTreeNode<T?> p)
+        {
+            if (p.Left == null && p.Right == null
+                || p.Left == null && p.Right != null
+                || p.Left != null && p.Right == null)
+            {
+                var promoted = (p.Left ?? p.Right) as RBTreeNode<T>;
+
+                if (promoted != null)
+                {
+                    promoted.Parent = p.Parent;
+
+                    if (p.Color == RBTreeNodeColor.Black)
+                    {
+                        promoted.Color = RBTreeNodeColor.Black;
+                    }
+                }
+
+                _ = p.Parent!.Left == p
+                    ? p.Parent.Left = promoted
+                    : p.Parent.Right = promoted;
+            }
         }
 
         public static void FixInsertion(RBTreeNode<T> insertedNode)
@@ -265,22 +301,11 @@ public static class Utilities
             {
                 if (uC == RBTreeNodeColor.Red)
                 {
-                    while (g != null)
-                    {
-                        u!.Color = RBTreeNodeColor.Black;
-                        p!.Color = RBTreeNodeColor.Black;
-                        g.Color = RBTreeNodeColor.Red;
+                    u!.Color = RBTreeNodeColor.Black;
+                    p!.Color = RBTreeNodeColor.Black;
+                    g.Color = RBTreeNodeColor.Red;
 
-                        p = g.Parent as RBTreeNode<T>;
-                        g = p?.Parent as RBTreeNode<T>;
-
-                        if (g != null)
-                        {
-                            u = (g!.Left == p
-                                ? g.Right
-                                : g.Left) as RBTreeNode<T>;
-                        }
-                    }
+                    FixInsertion(g);
                 }
                 else
                 {
@@ -294,14 +319,14 @@ public static class Utilities
                     if (g.Left == p && p.Right == insertedNode)
                     {
                         LeftRotate(p!);
-                        RightRotate(insertedNode!);
+                        RightRotate(insertedNode.Parent);
 
                         (insertedNode.Color, g.Color) = (g.Color, insertedNode.Color);
                     }
 
                     if (g.Right == p && p.Right == insertedNode)
                     {
-                        RightRotate(g!);
+                        LeftRotate(g!);
 
                         (p.Color, g.Color) = (g.Color, p.Color);
                     }
@@ -309,7 +334,7 @@ public static class Utilities
                     if (g.Right == p && p.Left == insertedNode)
                     {
                         RightRotate(p!);
-                        LeftRotate(insertedNode!);
+                        LeftRotate(insertedNode.Parent);
 
                         (insertedNode.Color, g.Color) = (g.Color, insertedNode.Color);
                     }
