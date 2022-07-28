@@ -4,7 +4,7 @@
     {
         public static TreeNode<T> RebuildBinaryTreeP62<T>(
             T[] preOrder,
-            T[] inOrder)
+            T[] inOrder) where T : struct
         {
             if (preOrder == null)
             {
@@ -41,7 +41,7 @@
             int startInOrder,
             int endInOrder,
             T[] preOrder,
-            T[] inOrder)
+            T[] inOrder) where T : struct
         {
             var root = new TreeNode<T>
             {

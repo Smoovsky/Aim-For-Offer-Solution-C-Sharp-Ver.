@@ -2,7 +2,7 @@
 {
     public static partial class Solution
     {
-        public static TreeNode<T> NextNodeInOrderP64<T>(TreeNode<T> currentNode)
+        public static TreeNode<T> NextNodeInOrderP64<T>(TreeNode<T> currentNode) where T : struct
         {
             if (currentNode == null)
             {

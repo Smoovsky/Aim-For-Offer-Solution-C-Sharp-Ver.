@@ -476,21 +476,31 @@ using static Algorithm.Utility.Utilities;
 
 // ====================================================================================
 // Test Red-Black Tree
-RBTreeNode<int>? root = null;
-RBTreeNode<int>.Insert(ref root, 1);
-RBTreeNode<int>.Insert(ref root, 6);
-RBTreeNode<int>.Insert(ref root, 3);
-RBTreeNode<int>.Insert(ref root, 9);
-RBTreeNode<int>.Insert(ref root, 3);
-RBTreeNode<int>.Insert(ref root, 10);
-RBTreeNode<int>.Insert(ref root, 3);
-RBTreeNode<int>.Insert(ref root, 5);
-RBTreeNode<int>.Insert(ref root, 6);
-RBTreeNode<int>.Insert(ref root, 7);
-RBTreeNode<int>.Insert(ref root, 2);
-RBTreeNode<int>.Insert(ref root, 14);
-RBTreeNode<int>.Insert(ref root, 15);
-RBTreeNode<int>.Insert(ref root, 11);
-RBTreeNode<int>.Insert(ref root, 12);
+// RBTreeNode<int>? root = null;
+// RBTreeNode<int>.Insert(ref root, 1);
+// RBTreeNode<int>.Insert(ref root, 6);
+// RBTreeNode<int>.Insert(ref root, 3);
+// RBTreeNode<int>.Insert(ref root, 9);
+// RBTreeNode<int>.Insert(ref root, 3);
+// RBTreeNode<int>.Insert(ref root, 10);
+// RBTreeNode<int>.Insert(ref root, 3);
+// RBTreeNode<int>.Insert(ref root, 5);
+// RBTreeNode<int>.Insert(ref root, 6);
+// RBTreeNode<int>.Insert(ref root, 7);
+// RBTreeNode<int>.Insert(ref root, 2);
+// RBTreeNode<int>.Insert(ref root, 14);
+// RBTreeNode<int>.Insert(ref root, 15);
+// RBTreeNode<int>.Insert(ref root, 11);
+// RBTreeNode<int>.Insert(ref root, 12);
 
-TreeNode<int>.Print2D(root);
+// TreeNode<int>.Print2D(root);
+
+// ====================================================================================
+// P210LeastKNumbers
+P210Test1();
+P210Test2();
+P210Test3();
+P210Test4();
+P210Test5();
+P210Test6();
+P210Test7();

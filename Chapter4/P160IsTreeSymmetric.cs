@@ -2,11 +2,11 @@
 
 public static partial class Solution
 {
-    public static bool P160IsTreeSymmetric<T>(TreeNode<T>? root) => P160IsTreeSymmetricCore(root, root);
+    public static bool P160IsTreeSymmetric<T>(TreeNode<T>? root) where T : struct => P160IsTreeSymmetricCore(root, root);
 
     public static bool P160IsTreeSymmetricCore<T>(
         TreeNode<T>? tree1,
-        TreeNode<T>? tree2)
+        TreeNode<T>? tree2) where T : struct
     {
         if (tree1 == null && tree2 == null)
         {
@@ -18,9 +18,7 @@ public static partial class Solution
             return false;
         }
 
-        if (tree1.Value?.Equals(tree2.Value) != true
-            || (tree1.Value == null && tree2.Value != null)
-            || (tree1.Value != null && tree2.Value == null))
+        if (tree1.Value.Equals(tree2.Value) != true)
         {
             return false;
         }
@@ -54,9 +52,9 @@ public static partial class Solution
         TreeNode<int> pNode72 = new(7);
         TreeNode<int> pNode52 = new(5);
 
-        TreeNode<int>.ConnectTreeNodes<int>(pNode8, pNode61, pNode62);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode61, pNode51, pNode71);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode62, pNode72, pNode52);
+        TreeNode<int>.ConnectTreeNodes(pNode8, pNode61, pNode62);
+        TreeNode<int>.ConnectTreeNodes(pNode61, pNode51, pNode71);
+        TreeNode<int>.ConnectTreeNodes(pNode62, pNode72, pNode52);
 
         P160Test("P160Test1", pNode8, true);
 
@@ -76,9 +74,9 @@ public static partial class Solution
         TreeNode<int> pNode72 = new(7);
         TreeNode<int> pNode52 = new(5);
 
-        TreeNode<int>.ConnectTreeNodes<int>(pNode8, pNode61, pNode9);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode61, pNode51, pNode71);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode9, pNode72, pNode52);
+        TreeNode<int>.ConnectTreeNodes(pNode8, pNode61, pNode9);
+        TreeNode<int>.ConnectTreeNodes(pNode61, pNode51, pNode71);
+        TreeNode<int>.ConnectTreeNodes(pNode9, pNode72, pNode52);
 
         P160Test("P160Test2", pNode8, false);
 
@@ -97,9 +95,9 @@ public static partial class Solution
         TreeNode<int> pNode71 = new(7);
         TreeNode<int> pNode72 = new(7);
 
-        TreeNode<int>.ConnectTreeNodes<int>(pNode8, pNode61, pNode62);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode61, pNode51, pNode71);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode62, pNode72, null);
+        TreeNode<int>.ConnectTreeNodes(pNode8, pNode61, pNode62);
+        TreeNode<int>.ConnectTreeNodes(pNode61, pNode51, pNode71);
+        TreeNode<int>.ConnectTreeNodes(pNode62, pNode72, null);
 
         P160Test("P160Test3", pNode8, false);
 
@@ -127,13 +125,13 @@ public static partial class Solution
         TreeNode<int> pNode11 = new(1);
         TreeNode<int> pNode12 = new(1);
 
-        TreeNode<int>.ConnectTreeNodes<int>(pNode5, pNode31, pNode32);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode31, pNode41, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode32, null, pNode42);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode41, pNode21, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode42, null, pNode22);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode21, pNode11, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode22, null, pNode12);
+        TreeNode<int>.ConnectTreeNodes(pNode5, pNode31, pNode32);
+        TreeNode<int>.ConnectTreeNodes(pNode31, pNode41, null);
+        TreeNode<int>.ConnectTreeNodes(pNode32, null, pNode42);
+        TreeNode<int>.ConnectTreeNodes(pNode41, pNode21, null);
+        TreeNode<int>.ConnectTreeNodes(pNode42, null, pNode22);
+        TreeNode<int>.ConnectTreeNodes(pNode21, pNode11, null);
+        TreeNode<int>.ConnectTreeNodes(pNode22, null, pNode12);
 
         P160Test("P160Test4", pNode5, true);
 
@@ -162,13 +160,13 @@ public static partial class Solution
         TreeNode<int> pNode11 = new(1);
         TreeNode<int> pNode12 = new(1);
 
-        TreeNode<int>.ConnectTreeNodes<int>(pNode5, pNode31, pNode32);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode31, pNode41, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode32, null, pNode42);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode41, pNode6, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode42, null, pNode22);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode6, pNode11, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode22, null, pNode12);
+        TreeNode<int>.ConnectTreeNodes(pNode5, pNode31, pNode32);
+        TreeNode<int>.ConnectTreeNodes(pNode31, pNode41, null);
+        TreeNode<int>.ConnectTreeNodes(pNode32, null, pNode42);
+        TreeNode<int>.ConnectTreeNodes(pNode41, pNode6, null);
+        TreeNode<int>.ConnectTreeNodes(pNode42, null, pNode22);
+        TreeNode<int>.ConnectTreeNodes(pNode6, pNode11, null);
+        TreeNode<int>.ConnectTreeNodes(pNode22, null, pNode12);
 
         P160Test("P160Test5", pNode5, false);
 
@@ -195,13 +193,13 @@ public static partial class Solution
         TreeNode<int> pNode22 = new(2);
         TreeNode<int> pNode12 = new(1);
 
-        TreeNode<int>.ConnectTreeNodes<int>(pNode5, pNode31, pNode32);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode31, pNode41, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode32, null, pNode42);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode41, pNode21, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode42, null, pNode22);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode21, null, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode22, null, pNode12);
+        TreeNode<int>.ConnectTreeNodes(pNode5, pNode31, pNode32);
+        TreeNode<int>.ConnectTreeNodes(pNode31, pNode41, null);
+        TreeNode<int>.ConnectTreeNodes(pNode32, null, pNode42);
+        TreeNode<int>.ConnectTreeNodes(pNode41, pNode21, null);
+        TreeNode<int>.ConnectTreeNodes(pNode42, null, pNode22);
+        TreeNode<int>.ConnectTreeNodes(pNode21, null, null);
+        TreeNode<int>.ConnectTreeNodes(pNode22, null, pNode12);
 
         P160Test("P160Test6", pNode5, false);
 
@@ -241,13 +239,13 @@ public static partial class Solution
         TreeNode<int> pNode41 = new(5);
         TreeNode<int> pNode42 = new(5);
 
-        TreeNode<int>.ConnectTreeNodes<int>(pNode1, pNode21, pNode22);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode21, pNode31, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode22, null, pNode32);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode31, pNode41, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode32, null, pNode42);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode41, null, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode42, null, null);
+        TreeNode<int>.ConnectTreeNodes(pNode1, pNode21, pNode22);
+        TreeNode<int>.ConnectTreeNodes(pNode21, pNode31, null);
+        TreeNode<int>.ConnectTreeNodes(pNode22, null, pNode32);
+        TreeNode<int>.ConnectTreeNodes(pNode31, pNode41, null);
+        TreeNode<int>.ConnectTreeNodes(pNode32, null, pNode42);
+        TreeNode<int>.ConnectTreeNodes(pNode41, null, null);
+        TreeNode<int>.ConnectTreeNodes(pNode42, null, null);
 
         P160Test("P160Test9", pNode1, true);
 
@@ -272,13 +270,13 @@ public static partial class Solution
         TreeNode<int> pNode41 = new(5);
         TreeNode<int> pNode42 = new(5);
 
-        TreeNode<int>.ConnectTreeNodes<int>(pNode1, pNode21, pNode22);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode21, pNode31, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode22, null, pNode32);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode31, pNode41, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode32, pNode42, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode41, null, null);
-        TreeNode<int>.ConnectTreeNodes<int>(pNode42, null, null);
+        TreeNode<int>.ConnectTreeNodes(pNode1, pNode21, pNode22);
+        TreeNode<int>.ConnectTreeNodes(pNode21, pNode31, null);
+        TreeNode<int>.ConnectTreeNodes(pNode22, null, pNode32);
+        TreeNode<int>.ConnectTreeNodes(pNode31, pNode41, null);
+        TreeNode<int>.ConnectTreeNodes(pNode32, pNode42, null);
+        TreeNode<int>.ConnectTreeNodes(pNode41, null, null);
+        TreeNode<int>.ConnectTreeNodes(pNode42, null, null);
 
         P160Test("P160Test10", pNode1, false);
 

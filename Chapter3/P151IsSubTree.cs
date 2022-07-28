@@ -3,9 +3,9 @@
 public static partial class Solution
 {
     public static bool P151HasSubTree<T>(
-        TreeNode<T?>? tree1,
-        TreeNode<T?>? tree2)
-    where T : IComparable
+        TreeNode<T>? tree1,
+        TreeNode<T>? tree2)
+    where T : struct, IComparable
     {
         if (tree1 == null || tree2 == null)
         {
@@ -24,8 +24,8 @@ public static partial class Solution
     }
 
     public static bool P151IsSubTree<T>(
-        TreeNode<T?>? tree1,
-        TreeNode<T?>? tree2)
+        TreeNode<T>? tree1,
+        TreeNode<T>? tree2) where T : struct
     {
         if (tree2 == null)
         {
@@ -37,8 +37,7 @@ public static partial class Solution
             return false;
         }
 
-        if (tree1.Value?.Equals(tree2.Value) != true
-            && !(tree1.Value == null && tree2.Value == null))
+        if (tree1.Value.Equals(tree2.Value) != true)
         {
             return false;
         }
@@ -117,8 +116,8 @@ public static partial class Solution
 
         P151Test("P151Test2", pNodeA1, pNodeB1, false);
 
-        
-        
+
+
     }
 
     // 树中结点只有左子结点，树B是树A的子结构
@@ -153,8 +152,8 @@ public static partial class Solution
 
         P151Test("P151Test3", pNodeA1, pNodeB1, true);
 
-        
-        
+
+
     }
 
     // 树中结点只有左子结点，树B不是树A的子结构
@@ -189,8 +188,8 @@ public static partial class Solution
 
         P151Test("P151Test4", pNodeA1, pNodeB1, false);
 
-        
-        
+
+
     }
 
     // 树中结点只有右子结点，树B是树A的子结构
@@ -225,8 +224,8 @@ public static partial class Solution
 
         P151Test("P151Test5", pNodeA1, pNodeB1, true);
 
-        
-        
+
+
     }
 
     // 树A中结点只有右子结点，树B不是树A的子结构
@@ -262,8 +261,8 @@ public static partial class Solution
 
         P151Test("P151Test6", pNodeA1, pNodeB1, false);
 
-        
-        
+
+
     }
 
     // 树A为空树
@@ -279,7 +278,7 @@ public static partial class Solution
 
         P151Test("P151Test7", null, pNodeB1, false);
 
-        
+
     }
 
     // 树B为空树
@@ -295,7 +294,7 @@ public static partial class Solution
 
         P151Test("P151Test8", pNodeA1, null, false);
 
-        
+
     }
 
     // 树A和树B都为空
