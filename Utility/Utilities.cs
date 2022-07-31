@@ -743,7 +743,7 @@ public static class Utilities
             }
         }
 
-        public T? ExtractMax()
+        public T? ExtractMin()
         {
             if (_values.Count == 0)
             {
