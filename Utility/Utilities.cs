@@ -808,4 +808,70 @@ public static class Utilities
             return max;
         }
     }
+
+    public static T[] QuickSort<T>(
+        IEnumerable<T> source,
+        IComparer<T>? comparer = null)
+    {
+        var sourceArr = source.ToArray();
+
+        QuickSort(sourceArr, 0, sourceArr.Length - 1, comparer);
+
+        return sourceArr;
+    }
+
+    public static void QuickSort<T>(
+        T[] source,
+        int startIndex,
+        int endIndex,
+        IComparer<T>? comparer = null)
+    {
+        var index = QuickSortPartition(source, startIndex, endIndex, comparer);
+
+        if (index > startIndex)
+        {
+            QuickSortPartition(source, startIndex, index - 1, comparer);
+        }
+
+        if (index < endIndex)
+        {
+            QuickSortPartition(source, index + 1, endIndex, comparer);
+        }
+    }
+
+    private static int QuickSortPartition<T>(
+        T[] source,
+        int start,
+        int end,
+        IComparer<T>? comparer = null)
+    {
+        var index = start + new Random().Next(end - start);
+
+        Swap(ref source[index], ref source[end]);
+
+        var smallIndex = start - 1;
+
+        for (index = start; index < end; index++)
+        {
+            if (IsLessThan(source[index], source[end], comparer))
+            {
+                smallIndex++;
+                Swap(ref source[smallIndex], ref source[index]);
+            }
+        }
+
+        smallIndex++;
+
+        Swap(ref source[smallIndex], ref source[end]);
+
+        return smallIndex;
+    }
+
+    private static bool IsLessThan<T>(
+            T left,
+            T right,
+            IComparer<T>? comparer = null) =>
+        comparer != null
+            ? comparer.Compare(left, right) < 0
+            : Comparer<T>.Default.Compare(left, right) < 0;
 }
