@@ -4,7 +4,7 @@ namespace Algorithm.Chapter5;
 
 public static partial class Solution
 {
-    public static int P232Num2Alpha(int num)
+    public static int P236Num2Alpha(int num)
     {
         if (num < 0)
         {
@@ -51,87 +51,87 @@ public static partial class Solution
 
 
     // ====================测试代码====================
-    public static void P232Test(string testName, int number, int expected)
+    public static void P236Test(string testName, int number, int expected)
     {
-        if (P232Num2Alpha(number) == expected)
+        if (P236Num2Alpha(number) == expected)
             Console.WriteLine($"{testName}: PASSED");
         else
             Console.WriteLine($"{testName}: FAILED");
     }
 
-    public static void P232Test1()
+    public static void P236Test1()
     {
         int number = 0;
         int expected = 1;
-        P232Test("Test1", number, expected);
+        P236Test("Test1", number, expected);
     }
 
-    public static void P232Test2()
+    public static void P236Test2()
     {
         int number = 10;
         int expected = 2;
-        P232Test("Test2", number, expected);
+        P236Test("Test2", number, expected);
     }
 
-    public static void P232Test3()
+    public static void P236Test3()
     {
         int number = 125;
         int expected = 3;
-        P232Test("Test3", number, expected);
+        P236Test("Test3", number, expected);
     }
 
-    public static void P232Test4()
+    public static void P236Test4()
     {
         int number = 126;
         int expected = 2;
-        P232Test("Test4", number, expected);
+        P236Test("Test4", number, expected);
     }
 
-    public static void P232Test5()
+    public static void P236Test5()
     {
         int number = 426;
         int expected = 1;
-        P232Test("Test5", number, expected);
+        P236Test("Test5", number, expected);
     }
 
-    public static void P232Test6()
+    public static void P236Test6()
     {
         int number = 100;
         int expected = 2;
-        P232Test("Test6", number, expected);
+        P236Test("Test6", number, expected);
     }
 
-    public static void P232Test7()
+    public static void P236Test7()
     {
         int number = 101;
         int expected = 2;
-        P232Test("Test7", number, expected);
+        P236Test("Test7", number, expected);
     }
 
-    public static void P232Test8()
+    public static void P236Test8()
     {
         int number = 12258;
         int expected = 5;
-        P232Test("Test8", number, expected);
+        P236Test("Test8", number, expected);
     }
 
-    public static void P232Test9()
+    public static void P236Test9()
     {
         int number = -100;
         int expected = 0;
-        P232Test("Test9", number, expected);
+        P236Test("Test9", number, expected);
     }
 
-    public static void  P232Test()
+    public static void  P236Test()
     {
-        P232Test1();
-        P232Test2();
-        P232Test3();
-        P232Test4();
-        P232Test5();
-        P232Test6();
-        P232Test7();
-        P232Test8();
-        P232Test9();
+        P236Test1();
+        P236Test2();
+        P236Test3();
+        P236Test4();
+        P236Test5();
+        P236Test6();
+        P236Test7();
+        P236Test8();
+        P236Test9();
     }
 }
