@@ -15,7 +15,7 @@ public static partial class Solution
         }
 
         start ??= 0;
-        end ??= source.Length;
+        end ??= source.Length - 1;
         copy ??= new int[source.Length];
 
         if (end == start)
@@ -30,16 +30,16 @@ public static partial class Solution
         if (end - start > 1)
         {
             P250CountInversePairs(
-                source,
-                ref reversePairCount,
                 copy,
+                ref reversePairCount,
+                source,
                 start,
                 mid);
 
             P250CountInversePairs(
-                source,
-                ref reversePairCount,
                 copy,
+                ref reversePairCount,
+                source,
                 mid + 1,
                 end);
         }
@@ -69,7 +69,7 @@ public static partial class Solution
     }
 
     // ====================测试代码====================
-    public static void Test(string testName, int[] data, int length, int expected)
+    public static void P250Test(string testName, int[] data, int expected)
     {
         if (testName != null)
             Console.Write($"{testName} begins: ");
@@ -83,85 +83,85 @@ public static partial class Solution
             Console.Write("Failed.\n");
     }
 
-    public static void Test1()
+    public static void P250Test1()
     {
         int[] data = new[] { 1, 2, 3, 4, 7, 6, 5 };
         int expected = 3;
 
-        Test("Test1", data, data.Length, expected);
+        P250Test("Test1", data, expected);
     }
 
     // 递减排序数组
-    public static void Test2()
+    public static void P250Test2()
     {
         int[] data = new[] { 6, 5, 4, 3, 2, 1 };
         int expected = 15;
 
-        Test("Test2", data, data.Length, expected);
+        P250Test("Test2", data, expected);
     }
 
     // 递增排序数组
-    public static void Test3()
+    public static void P250Test3()
     {
         int[] data = new[] { 1, 2, 3, 4, 5, 6 };
         int expected = 0;
 
-        Test("Test3", data, data.Length, expected);
+        P250Test("Test3", data, expected);
     }
 
     // 数组中只有一个数字
-    public static void Test4()
+    public static void P250Test4()
     {
         int[] data = new[] { 1 };
         int expected = 0;
 
-        Test("Test4", data, data.Length, expected);
+        P250Test("Test4", data, expected);
     }
 
 
     // 数组中只有两个数字，递增排序
-    public static void Test5()
+    public static void P250Test5()
     {
         int[] data = new[] { 1, 2 };
         int expected = 0;
 
-        Test("Test5", data, data.Length, expected);
+        P250Test("Test5", data, expected);
     }
 
     // 数组中只有两个数字，递减排序
-    public static void Test6()
+    public static void P250Test6()
     {
         int[] data = new[] { 2, 1 };
         int expected = 1;
 
-        Test("Test6", data, data.Length, expected);
+        P250Test("Test6", data, expected);
     }
 
     // 数组中有相等的数字
-    public static void Test7()
+    public static void P250Test7()
     {
         int[] data = new[] { 1, 2, 1, 2, 1 };
         int expected = 3;
 
-        Test("Test7", data, data.Length, expected);
+        P250Test("Test7", data, expected);
     }
 
-    public static void Test8()
+    public static void P250Test8()
     {
         int expected = 0;
 
-        Test("Test8", null, 0, expected);
+        P250Test("Test8", null, expected);
     }
 
     public static void P250Test()
     {
-        Test1();
-        Test2();
-        Test3();
-        Test4();
-        Test5();
-        Test6();
-        Test7();
-        Test8();
+        P250Test1();
+        P250Test2();
+        P250Test3();
+        P250Test4();
+        P250Test5();
+        P250Test6();
+        P250Test7();
+        P250Test8();
     }
 }
