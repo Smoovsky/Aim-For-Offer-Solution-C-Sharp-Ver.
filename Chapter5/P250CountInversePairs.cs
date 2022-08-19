@@ -16,7 +16,8 @@ public static partial class Solution
 
         start ??= 0;
         end ??= source.Length - 1;
-        copy ??= new int[source.Length];
+
+        copy ??= source.ToArray();
 
         if (end == start)
         {
@@ -27,22 +28,19 @@ public static partial class Solution
 
         var mid = (end - start) / 2 + start;
 
-        if (end - start > 1)
-        {
-            P250CountInversePairs(
-                copy,
-                ref reversePairCount,
-                source,
-                start,
-                mid);
+        P250CountInversePairs(
+            copy,
+            ref reversePairCount,
+            source,
+            start,
+            mid);
 
-            P250CountInversePairs(
-                copy,
-                ref reversePairCount,
-                source,
-                mid + 1,
-                end);
-        }
+        P250CountInversePairs(
+            copy,
+            ref reversePairCount,
+            source,
+            mid + 1,
+            end);
 
         var p1 = mid.Value;
         var p2 = end.Value;
@@ -54,7 +52,7 @@ public static partial class Solution
                 && p2 > mid
                 && source[p1] > source[p2])
             {
-                reversePairCount += p1 - start.Value + 1;
+                reversePairCount += p2 - mid.Value;
                 copy[p3--] = source[p1--];
             }
             else if (p2 > mid)
