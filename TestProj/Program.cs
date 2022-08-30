@@ -5,6 +5,7 @@ using static Algorithm.Chapter2.Solution;
 using static Algorithm.Chapter3.Solution;
 using static Algorithm.Chapter4.Solution;
 using static Algorithm.Chapter5.Solution;
+using static Algorithm.Chapter6.Solution;
 using static Algorithm.Utility.Utilities;
 
 // ====================================================================================
@@ -554,5 +555,9 @@ using static Algorithm.Utility.Utilities;
 // P250Test();
 
 // ====================================================================================
-// P255CountInversePairs
-P255Test();
+// P263CountAppearance
+P263Test();
+
+// ====================================================================================
+// P266FindMissing
+P266Test();
