@@ -37,12 +37,9 @@ public static partial class Solution
                 }
                 else
                 {
-                    for (int j = asitLst.Count - 1; j > 0; j--)
+                    while (asitLst.Count > 0 && source[asitLst.Last()] < source[i])
                     {
-                        if (source[asitLst[j]] < source[i])
-                        {
-                            asitLst.RemoveAt(j);
-                        }
+                        asitLst.RemoveAt(asitLst.Count - 1);
                     }
                 }
             }
