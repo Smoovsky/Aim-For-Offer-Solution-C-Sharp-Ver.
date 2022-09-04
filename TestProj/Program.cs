@@ -607,3 +607,11 @@ using static Algorithm.Utility.Utilities;
 // ====================================================================================
 // P292MaxQueue
 // P292Test();
+
+// ====================================================================================
+// P294DiceSumProbRecursive
+P294DiceSumProbRecursive(5);
+P294DiceSumProbLoop(5);
+
+P294DiceSumProbRecursive(6);
+P294DiceSumProbLoop(6);
