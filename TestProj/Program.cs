@@ -615,3 +615,8 @@ using static Algorithm.Utility.Utilities;
 
 // P294DiceSumProbRecursive(6);
 // P294DiceSumProbLoop(6);
+
+
+// ====================================================================================
+// P300Josephuse
+// Console.WriteLine(P300JosephuseBrutal(5, 3));
