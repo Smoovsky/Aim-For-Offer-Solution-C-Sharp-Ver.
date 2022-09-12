@@ -620,3 +620,11 @@ using static Algorithm.Utility.Utilities;
 // ====================================================================================
 // P300Josephuse
 // Console.WriteLine(P300JosephuseBrutal(5, 3));
+
+
+// ====================================================================================
+// P307TermialConstrained
+// Console.WriteLine(P307TermialConstrained(5));
+// Console.WriteLine(P307TermialConstrained(6));
+// Console.WriteLine(P307TermialConstrained(7));
+// Console.WriteLine(P307TermialConstrained(8));
