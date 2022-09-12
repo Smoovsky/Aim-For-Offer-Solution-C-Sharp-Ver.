@@ -610,8 +610,8 @@ using static Algorithm.Utility.Utilities;
 
 // ====================================================================================
 // P294DiceSumProbRecursive
-P294DiceSumProbRecursive(5);
-P294DiceSumProbLoop(5);
+// P294DiceSumProbRecursive(5);
+// P294DiceSumProbLoop(5);
 
-P294DiceSumProbRecursive(6);
-P294DiceSumProbLoop(6);
+// P294DiceSumProbRecursive(6);
+// P294DiceSumProbLoop(6);
