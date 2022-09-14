@@ -634,3 +634,12 @@ using static Algorithm.Utility.Utilities;
 // Console.WriteLine(P310AddNoSign(1, 3));
 // Console.WriteLine(P310AddNoSign(-5, 10));
 // Console.WriteLine(P310AddNoSign(1000, 5232));
+
+// ====================================================================================
+// P312ArrayProduct
+// Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(
+//     P312ArrayProduct(new[] { 1, 2 })));
+// Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(
+//     P312ArrayProduct(new[] { 1, 2, 3 })));
+// Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(
+//     P312ArrayProduct(new[] { 7, 5, 2 })));
