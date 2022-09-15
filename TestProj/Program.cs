@@ -6,6 +6,7 @@ using static Algorithm.Chapter3.Solution;
 using static Algorithm.Chapter4.Solution;
 using static Algorithm.Chapter5.Solution;
 using static Algorithm.Chapter6.Solution;
+using static Algorithm.Chapter7.Solution;
 using static Algorithm.Utility.Utilities;
 
 // ====================================================================================
@@ -643,3 +644,10 @@ using static Algorithm.Utility.Utilities;
 //     P312ArrayProduct(new[] { 1, 2, 3 })));
 // Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(
 //     P312ArrayProduct(new[] { 7, 5, 2 })));
+
+// ====================================================================================
+// P324Str2Num
+Console.WriteLine(P324Str2Num("5"));
+Console.WriteLine(P324Str2Num("123424"));
+Console.WriteLine(P324Str2Num("0"));
+Console.WriteLine(P324Str2Num("-348209"));
