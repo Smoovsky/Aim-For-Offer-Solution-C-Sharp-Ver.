@@ -31,10 +31,31 @@ public static partial class Solution
             return null;
         }
 
-        
+        var current1 = root;
+        var current2 = root;
+        var idx1 = 0;
+        var idx2 = 0;
+
+        var lastSame = root;
+
+        while (current1 == current2)
+        {
+            if (idx1 == path1.Count - 1
+                || idx2 == path2.Count - 1)
+            {
+                break;
+            }
+
+            lastSame = current1;
+
+            current1 = path1[++idx1];
+            current2 = path2[++idx2];
+        }
+
+        return lastSame;
     }
 
-    public static ICollection<MultiChildNode<T>> GetPath<T>(
+    public static List<MultiChildNode<T>> GetPath<T>(
         MultiChildNode<T> current,
         MultiChildNode<T> node,
         ref bool found,
