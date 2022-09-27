@@ -9,6 +9,18 @@ public static partial class Solution
         public T Value { get; set; }
 
         public ICollection<MultiChildNode<T>> Children { get; set; } = new List<MultiChildNode<T>>();
+
+        public static void Connect(MultiChildNode<T> root, MultiChildNode<T> child)
+        {
+            if (root == null || child == null)
+            {
+                return;
+            }
+
+            root.Children ??= new List<MultiChildNode<T>>();
+
+            root.Children.Add(child);
+        }
     }
 
     public static MultiChildNode<T> P330CommonParent<T>(
