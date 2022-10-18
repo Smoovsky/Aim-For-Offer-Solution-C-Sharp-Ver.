@@ -647,7 +647,12 @@ using static Algorithm.Utility.Utilities;
 
 // ====================================================================================
 // P324Str2Num
-Console.WriteLine(P324Str2Num("5"));
-Console.WriteLine(P324Str2Num("123424"));
-Console.WriteLine(P324Str2Num("0"));
-Console.WriteLine(P324Str2Num("-348209"));
+// Console.WriteLine(P324Str2Num("5"));
+// Console.WriteLine(P324Str2Num("123424"));
+// Console.WriteLine(P324Str2Num("0"));
+// Console.WriteLine(P324Str2Num("-348209"));
+
+
+// ====================================================================================
+// P330CommonParent
+P330Test();
