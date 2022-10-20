@@ -40,4 +40,51 @@ public static partial class Solution
 
         return (int)(neg ? -result : result);
     }
+
+    // ====================测试代码====================
+    public static void P324Test(string str)
+    {
+        int? result = P324Str2Num(str);
+        if (result == null)
+            Console.Write($"the input {str} is invalid.\n");
+        else
+            Console.Write($"number for {str} is: {result}.\n");
+    }
+
+    public static void P324Test()
+    {
+        P324Test(null);
+
+        P324Test("");
+
+        P324Test("123");
+
+        P324Test("+123");
+
+        P324Test("-123");
+
+        P324Test("1a33");
+
+        P324Test("+0");
+
+        P324Test("-0");
+
+        //有效的最大正整数, 0x7FFFFFFF
+        P324Test("+2147483647");
+
+        P324Test("-2147483647");
+
+        P324Test("+2147483648");
+
+        //有效的最小负整数, 0x80000000
+        P324Test("-2147483648");
+
+        P324Test("+2147483649");
+
+        P324Test("-2147483649");
+
+        P324Test("+");
+
+        P324Test("-");
+    }
 }
