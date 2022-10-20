@@ -12,7 +12,7 @@ public static partial class Solution
         var neg = source[0] == '-';
         var skip = source[0] == '-' || source[0] == '+';
 
-        if (neg && source.Length == 1)
+        if ((source[0] == '-' || source[0] == '+') && source.Length == 1)
         {
             return null;
         }
